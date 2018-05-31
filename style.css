@@ -1,0 +1,378 @@
+/*--CSS by Ludwig Jedde- janvier 2018--*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(img/fond_page_metal.jpg);
+    background-size: cover;
+}
+
+/*------------------- HEADER ---------------------------------*/
+
+header {
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: solid 5px black;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+
+h2,
+h3,
+p {
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+
+/*--logo silhouette Lyon entête--*/
+
+header img:first-child {
+    max-height: 100px;
+    margin: 50px;
+}
+
+/* -------------------- SECTION Mode d'emploi (diaporama)------*/
+
+#mode_emploi {
+    height: 800px;
+    margin: 10px;
+    border: solid 5px black;
+    border-radius: 30px;
+}
+
+.conteneur {
+    width: auto;
+    margin: 0 auto;
+}
+
+/*--Titre du mode d'emploi--*/
+
+#mode_emploi h2 {
+    margin: 0;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#mode_emploi h3 {
+    padding: 30px;
+    text-align: center;
+}
+
+#mode_emploi h3 span {
+    padding: 25px;
+    border: solid black;
+    border-radius: 100px;
+    background-color: yellowgreen;
+}
+
+/*--style du diaporama--*/
+
+.fade:first-of-type {
+    display: flex;
+}
+
+.fade {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.fade div {
+    padding: 30px;
+}
+
+.fade img {
+    max-height: 300px;
+}
+
+/*--Contrôles du diaporama du mode d'emploi--*/
+
+#mode_emploi button {
+    height: 70px;
+    width: 80px;
+    top: 920px;
+    padding: 5px;
+    border: solid black 2px;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    background-color: yellowgreen;
+}
+
+#mode_emploi button:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.prev {
+    position: absolute;
+    left: 5%;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.next {
+    position: absolute;
+    right: 5%;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.stop {
+    position: absolute;
+    font-weight: bold;
+    font-size: 200%;
+    z-index: 1;
+}
+
+.play {
+    position: absolute;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.play,
+.stop {
+    left: 47%;
+}
+
+
+
+/*----------------------- SECTION carte de réservation -------------*/
+
+/*--Animation de la fenêtre de réservation--*/
+
+.fade,
+.station_info,
+.station_name,
+.station_adresse,
+.velos_dispo,
+.bouton_reservation,
+.reservation {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2.5s;
+    animation-name: mymove;
+    animation-duration: 2.5s;
+
+}
+
+.velos_dispo {
+    color: blue;
+    background-color: whitesmoke;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/*--Conteneur (carte google + panneau de réservation)--*/
+
+#map {
+    width: 1400px;
+    height: 800px;
+    margin: 20px;
+    border: solid 2px;
+}
+
+#map_reservation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*--information de la station et réservation------------------------*/
+
+/*--CONTENEUR du panneau de réservation + panneau de signature--*/
+
+.station_info,
+.reservation {
+    max-height: 500px;
+}
+
+#map_reservation button,
+.annuler {
+    font-size: 40px;
+    margin: 20px;
+}
+
+aside {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*--panneau de réservation---------*/
+
+.station_info,
+.reservation {
+
+    margin: 20px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+    overflow: hidden;
+    display: block;
+}
+
+/*--titre--*/
+
+#map_reservation h3 {
+    padding: 10px;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: greenyellow;
+}
+
+/*--texte--*/
+
+.station_info p {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin: 10px;
+}
+
+/*--boutons "réserver" et "annuler"--*/
+
+#map_reservation button,
+.annuler {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.station_info button {
+    display: none;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/*--bouton "réserver"--*/
+
+.station_info button {
+    border: solid 2px;
+    background-color: yellow;
+    color: black;
+}
+
+/*--bouton "valider"--*/
+
+#valider {
+    border: solid 2px;
+    background-color: green;
+    color: white;
+}
+
+/*--bouton "effacer"--*/
+
+#effacer {
+    border: solid 2px;
+    background-color: red;
+    color: white;
+}
+
+/*--bouton "annuler" après réservation effectuée--*/
+
+.annuler {
+    padding: 10px 10px;
+    margin: 12px;
+    background-color: red;
+    color: white;
+}
+
+.bouton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.reservation {
+    display: none;
+}
+
+/* -----------FOOTER partie visuelle " réservation en cours "-------------- */
+
+footer {
+    height: 400px;
+    border-top: solid 5px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+}
+
+/*--images du vélo'V--*/
+
+/*--vélo à gauche--*/
+
+footer img:first-child {
+    max-height: 80px;
+    margin: 50px;
+}
+
+/*--vélo à droite--*/
+
+footer img:last-child {
+    max-height: 80px;
+    margin: 50px;
+}
+
+footer p {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+}
+
+footer .texte_temps {
+    background-color: orangered;
+    margin: 10px;
+    padding: 10px 10px;
+    color: white;
+}
+
+/*--signature par le "canvas"--*/
+
+#signature_canvas {
+    border: solid 2px #45505b;
+    background-color: white;
+    height: 150px;
+    width: 99%;
+}

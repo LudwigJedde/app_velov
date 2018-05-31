@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vélo'V de Lyon</title>
+    <link rel="icon" href="https://i.gyazo.com/6ab836059c50a2409aa27244c0c97492.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="./img/silhouette_lyon.png" alt="silhouette des monuments de Lyon">
+        <h1>Vélos en libre service de la ville de Lyon</h1>
+    </header>
+
+    <section id="mode_emploi">
+        <div class="conteneur">
+            <h2>Comment utiliser cette réservation en ligne ?</h2>
+            <div class="fade">
+                <div><img src="./img/etape_1.png" alt="illustration étape 1">
+                </div>
+                <div>
+                    <h3><span>Etape 1</span></h3>
+                    <p>Dans la carte ci-dessous, des marqueurs regroupent plusieurs stations de vélos.<br><br>Cliquez sur un marqueur pour voir les stations de vélos de la zone choisie.</p>
+                </div>
+            </div>
+            <div class="fade">
+                <div><img src="./img/etape_2.png" alt="illustration étape 2">
+                </div>
+                <div>
+                    <h3><span>Etape 2</span></h3>
+                    <p>Cliquez sur une station pour voir les détails : (adresse, nombre de vélos disponibles)<br><br>Vélos verts : + de 5 vélos disponibles<br>Vélos oranges : de 1 à 5 vélos disponibles<br>Vélos rouges : Aucun vélos disponibles.</p>
+                </div>
+            </div>
+            <div class="fade">
+                <div><img src="./img/etape_3.png" alt="illustration étape 3">
+                </div>
+                <div>
+                    <h3><span>Etape 3</span></h3>
+                    <p>Dans la fenêtre latérale "Détails de la station", <br><br>cliquez sur "Réserver" pour ouvrir la fenêtre de réservation.</p>
+                </div>
+            </div>
+            <div class="fade">
+                <div><img src="./img/etape_4.png" alt="illustration étape 4">
+                </div>
+                <div>
+                    <h3><span>Etape 4</span></h3>
+                    <p>Signez dans la case prévue et cliquez sur "valider" pour finaliser votre réservation.</p>
+                </div>
+            </div>
+            <div class="fade">
+                <div><img src="./img/etape_5.png" alt="illustration étape 5">
+                </div>
+                <div>
+                    <h3><span>Etape 5</span></h3>
+                    <p>Votre vélo est réservé pendant 20 minutes. <br>Vous avez la possibilité d'annuler ou de réaliser une nouvelle<br> réservation si vous le souhaitez.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="next">&rang;&rang;</button>
+            <button class="prev">&lang;&lang;</button>
+            <button type="button" class="stop" id="stopButton" onclick="document.getElementById('stopButton').style.display='none'">||</button>
+            <button type="button" class="play" onclick="document.getElementById('stopButton').style.display='block'">&gt;</button>
+        </div>
+    </section>
+
+    <section id="map_reservation">
+        <div id="map"></div>
+        <aside>
+            <div class="station_info">
+                <h3>Information de la station :</h3>
+                <p class="station_name">Pour réserver, sélectionner une station sur la carte</p><br>
+                <p class="station_adresse"></p><br>
+                <p class="velos_dispo"></p>
+                <button class="bouton_reservation">Réserver</button>
+            </div>
+            <div class="reservation">
+                <h3>Signature de réservation</h3>
+                <canvas id="signature_canvas"></canvas>
+                <div class="bouton">
+                    <button id="valider">Valider</button>
+                    <button id="effacer">Effacer</button>
+                </div>
+            </div>
+
+        </aside>
+    </section>
+
+    <footer>
+        <img src="./img/Velib-Electrique.png" alt="vélo Vélib">
+        <p>
+            <span class="texte_footer">Pas de réservation en cours</span>
+            <br><br>
+            <span class="texte_temps"></span>
+            <br><br>
+            <button class="annuler">Annuler</button>
+        </p>
+        <img src="./img/Velib-Electrique.png" alt="vélo Vélib">
+
+    </footer>
+
+    <!--SCRIPT Pour le diaporama-->
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="./js/diaporama.js"></script>
+
+    <!--SCRIPT Pour la carte-->
+    <!--Fond de carte type google pour Lyon-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMu6wkTA0ktwDIHWOU3yRXyZsC34v2iEU"></script>
+
+    <script async type="text/javascript" src="./js/map.js"></script>
+    <script async type="text/javascript" src="./js/ajax.js"></script>
+
+    <!--script pour les regroupements de marqueurs sur la carte-->
+    <script async type="text/javascript" src="./js/markerclusterer.js"></script>
+
+    <!--script canvas pour la signature-->
+    <script async type="text/javascript" src="js/canvas.js"></script>
+
+</body>
+
+</html>
